@@ -146,15 +146,17 @@ abstract class BaseProvider implements MediaProviderInterface
      */
     public function preRemove(MediaInterface $media)
     {
-        $path = $this->getReferenceImage($media);
-
-        if ($this->getFilesystem()->has($path)) {
-            $this->getFilesystem()->delete($path);
-        }
-
-        if ($this->requireThumbnails()) {
-            $this->thumbnail->delete($this, $media);
-        }
+        // Adactive Hack: Disable file remove
+        return;
+//        $path = $this->getReferenceImage($media);
+//
+//        if ($this->getFilesystem()->has($path)) {
+//            $this->getFilesystem()->delete($path);
+//        }
+//
+//        if ($this->requireThumbnails()) {
+//            $this->thumbnail->delete($this, $media);
+//        }
     }
 
     /**
